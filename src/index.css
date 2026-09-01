@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Тонкая кастомная полоса прокрутки в тёмной теме */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #171717;
+}
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #525252;
+}
+/* Золотой текст со свечением для логотипа */
+.text-gold-glow {
+  color: #D4AF37;
+  text-shadow: 
+    0 0 10px rgba(212, 175, 55, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.6),
+    0 0 30px rgba(212, 175, 55, 0.4),
+    0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+/* Градиентная обводка */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, #818cf8 0%, #a855f7 50%, #ec4899 100%);
+  padding: 2px;
+  border-radius: inherit;
+}
+
+.gradient-border > * {
+  background: #171717;
+  border-radius: inherit;
+}
+
+/* Градиентная кнопка */
+.btn-gradient {
+  background: linear-gradient(135deg, #818cf8 0%, #a855f7 50%, #ec4899 100%);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #a5b4fc 0%, #c084fc 50%, #f472b6 100%);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+}
+
+/* Вторичная кнопка в фиолетовой палитре */
+.btn-secondary {
+  background: #1e1b4b;
+  border: 1px solid #3730a3;
+}
+.btn-secondary:hover {
+  background: #312e81;
+  border-color: #4f46e5;
+}
+
+/* === Поля ввода с hover-подсветкой === */
+/* Лёгкое состояние "на подходе" (hover) — фиолетовое свечение вокруг поля */
+.input-field {
+  background-color: rgb(23 23 23);
+  border: 1px solid rgb(64 64 64);
+  border-radius: 0.75rem;
+  color: white;
+  transition: all 200ms ease-in-out;
+  outline: none;
+}
+
+/* При наведении курсора — фиолетовая обводка + лёгкое свечение */
+.input-field:hover:not(:focus) {
+  border-color: rgb(99 102 241);
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.4), 0 0 12px rgba(99, 102, 241, 0.25);
+}
+
+/* При фокусе (клике) — самое выраженное состояние */
+.input-field:focus,
+.input-field:focus-visible {
+  border-color: rgb(129 140 248);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5), 0 0 20px rgba(129, 140, 248, 0.4);
+}
